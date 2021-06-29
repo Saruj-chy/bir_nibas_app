@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VolleyActivity.ProjectUpdatesActivity">
+
+    <include
+        layout="@layout/app_bar_layout"
+        android:id="@+id/firestore_user_chats_appbar"
+        />
+
+
+
+
+    <ProgressBar
+        android:id="@+id/progress_chat_firestore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        android:translationZ="90dp"
+        android:layout_below="@+id/firestore_user_chats_appbar"
+        />
+
+    <RelativeLayout
+        android:id="@+id/relative_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/firestore_user_chats_appbar"
+        >
+        <RelativeLayout
+            android:id="@+id/relative_layout_1"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/relative_layout_2"
+            >
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_chatmsg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+
+                />
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            >
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_file"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_attach_file_24"
+                android:onClick="onSelectGalleryImage"
+                android:layout_alignParentLeft="true"
+                android:contentDescription="submit"
+                android:backgroundTint="@color/green"
+                android:layout_margin="16dp"
+                android:visibility="gone"
+                />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_camera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onSelectCameraClick"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_baseline_camera"
+                android:backgroundTint="@color/holo_green"
+                android:contentDescription="submit"
+                android:layout_margin="16dp" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/frame_display_camera"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:visibility="gone"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image_display"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/profile_image"
+                android:layout_above="@+id/relative"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:scaleType="fitXY"
+
+                />
+
+            <RelativeLayout
+                android:id="@+id/relative"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+
+                >
+
+
+                <ImageButton
+                    android:id="@+id/imgbtn_cancel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="50dp"
+
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_cancel" />
+
+                <ImageButton
+                    android:id="@+id/imgbtn_confirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="50dp"
+                    android:background="@android:color/transparent"
+
+                    android:src="@drawable/ic_baseline_check_box" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+    </FrameLayout>
+
+
+
+
+</RelativeLayout>
